@@ -20,3 +20,9 @@ for i in $(for i in $(ls -la *.csv); \
       do cat $i | awk '{ print $3 }'; done); \ 
                 do if [[ $i -ge "${length}" ]]; then echo $i; fi; done
 
+# normalizing the coverage according to the length
+covergaefile="covergae"
+for i in $(cat "${coverage}" | awk '{ print $2 }'); \ 
+          do for j in $(cat "${coverage}" | awk ' { print $3 }'); \
+                                        do expr ${i} * ${j}; done; done
+
