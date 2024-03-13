@@ -3,7 +3,7 @@
 # Date: 2024-3-11
 # each of these can be compiled into a specific AWK function. 
 
-# single liners for preparing the data for the visualization of the coverage or the length of the assembled unitigs from the pacbiohifi assembly. 
+# for preparing the data for the visualization of the coverage or the length of the assembled unitigs from the pacbiohifi assembly. 
 # coverage 
 for i in $(ls -la *.csv); \ 
         do cat $i | awk '{ print $2 }'; done
