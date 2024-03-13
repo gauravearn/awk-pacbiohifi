@@ -25,4 +25,11 @@ covergaefile="covergae"
 for i in $(cat "${coverage}" | awk '{ print $2 }'); \ 
           do for j in $(cat "${coverage}" | awk ' { print $3 }'); \
                                         do expr ${i} * ${j}; done; done
+#calculating the total length
+
+
+#calculating the total coverage
+
+
+#calculating the normalization of the coverage and the length
 
