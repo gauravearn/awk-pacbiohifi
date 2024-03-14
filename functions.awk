@@ -37,9 +37,14 @@ for i in $(cat test.cov | awk '{ print $3 }'); \
  for i in $(cat test.cov | awk '{ print $3 }'); \
                 do if [[ $i -ge "${lengthselectionsort}" ]] then; \ 
                                         echo $i; fi; done | youplot histogram
+# calculating the alignment coverage and the genome fraction aligned
+cat lastzalignment.txt | awk '{ print $10 }' | cut -f 1 -d "-" > length1.txt \ 
+              && cat lastzalignment.txt | awk '{ print $10 }' | cut -f 2 -d "-" > \
+                                          length2.txt && paste length1.txt length2.txt \ 
+                                                    | awk '{ print $2-$1 }' | youplot barplot
 
-#calculating the total coverage
-
-
-#calculating the normalization of the coverage and the length
+ cat lastzalignment.txt | awk '{ print $12 }' | cut -f 1 -d "-" > length1.txt \ 
+              && cat lastzalignment.txt | awk '{ print $12 }' | cut -f 2 -d "-" > \
+                                          length2.txt && paste length1.txt length2.txt \ 
+                                                    | awk '{ print $2-$1 }' | youplot barplot
 
