@@ -1,6 +1,8 @@
 #!/usr/bin/awk
 # Universitat Potsdam
 # Date: 2024-3-11
+# updated: 2024-3-14
+# Author: Gaurav Sablok
 # each of these can be compiled into a specific AWK function. 
 gem install youplot
 # for preparing the data for the visualization of the coverage or the length of the assembled unitigs from the pacbiohifi assembly. 
