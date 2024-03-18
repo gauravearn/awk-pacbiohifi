@@ -1,4 +1,4 @@
-# awk_simulators_pacbiohifi_assembly
+# awk_pacbiohifi_assembly
 awk simulators for the pacbiohifi assembly reading from the graphs. easy to use awk for the coverage and the length files. udpating later on with the complete awk functionalities for the compilation into the direct kernels. added some more functions to the same such as gfa extraction and lav and pfa alterations. added support for the functional aspect of the graph manipulations. Adding the support for the maf alignments. Added the support for the gnu visualziations. 
 
 ```
