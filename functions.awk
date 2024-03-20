@@ -36,7 +36,10 @@ for i in $(cat test.cov | awk '{ print $3 }'); \
  for i in $(cat test.cov | awk '{ print $3 }'); \
                 do if [[ $i -ge "${lengthselectionsort}" ]] then; \ 
                                         echo $i; fi; done | youplot histogram
-
+# genome assembled following length filter and the filtered uitigs
+cat test.cov | awk '$3 > 10000 { print $3 }' | gawk '{ sum += $1 }; \
+                      END { print sum }' && cat test.cov | \
+                                            awk '$3 > 10000 { print  $1"\t"$2"\t"$3 }'
 # estimating the total of the aligned length based on the computed alignments
 pafalignments="aligned.paf"
 cat aligned.paf | awk '{ print  $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7" \
@@ -70,7 +73,7 @@ cat lastzalignment.txt | awk '{ print $10 }' | cut -f 1 -d "-" > length1.txt \
               && cat lastzalignment.txt | awk '{ print $10 }' | cut -f 2 -d "-" > \
                                           length2.txt && paste length1.txt length2.txt \ 
                                                     | awk '{ print $2-$1 }' | youplot barplot
- cat lastzalignment.txt | awk '{ print $12 }' | cut -f 1 -d "-" > length1.txt \ 
+cat lastzalignment.txt | awk '{ print $12 }' | cut -f 1 -d "-" > length1.txt \ 
               && cat lastzalignment.txt | awk '{ print $12 }' | cut -f 2 -d "-" > \
                                           length2.txt && paste length1.txt length2.txt \ 
                                                     | awk '{ print $2-$1 }' | youplot barplot
