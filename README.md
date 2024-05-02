@@ -16,7 +16,7 @@ for i in $(cat test.cov | awk '{ print $3 }'); \
 ```
 ![image](https://github.com/sablokgaurav/awk_simulators_pacbiohifi_assembly/blob/main/plotimage.png)
 
-Gaurav Sablok \
+Gaurav \
 Academic Staff Member \
 Bioinformatics \
 Institute for Biochemistry and Biology \
